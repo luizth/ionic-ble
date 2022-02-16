@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BLE } from '@awesome-cordova-plugins/ble/ngx';
 
 @Component({
   selector: 'app-home',
@@ -7,14 +8,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  devices: any[] = [
-    {
-      'name': 'Luiz Device',
-      'id': '502b2aaf-5b70-41b5-9a97-8ed0b065cc5c',
-      'rsii': 45
-    }
-  ];
+  devices: any[] = [];
 
-  constructor() {}
+  constructor(private ble: BLE) {}
 
+  Scan(){
+    this.devices = [];
+  }
 }
